@@ -45,6 +45,8 @@ public class Reservation {
 
     public String updateDates(Date checkIn, Date checkOut){
         Date now = new Date();
+
+        //CHECKING ERROR MESSAGES AND RETURNING IN THE METHOD, IN CASE OF NO ERROR IT RETURNS NULL
         if (checkIn.before(now) || checkOut.before(now)){
             return "Reservation dates for update must be future dates";
         }
